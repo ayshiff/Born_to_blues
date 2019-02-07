@@ -14,8 +14,8 @@ import MusicStyleSubDetails from "./components/MusicStyleSubDetails/index";
 export const Context = React.createContext();
 
 const contextValue = {
-  MUSIC_DETAILS: ["artists", "links", "anecdotes", "blues"],
-  BLUES_DETAILS: ["artists", "anecdotes", "impact", "origine", "themes"]
+  MUSIC_DETAILS: ["", "artists", "links", "anecdotes", "blues"],
+  BLUES_DETAILS: ["", "artists", "influence", "origin", "end"]
 };
 
 /**
@@ -24,6 +24,11 @@ const contextValue = {
 const AppRouter = (translate: string => string) => (
   <Router>
     <div id="router">
+      {/* <Route
+        exact
+        path="/:musicStyle/:musicStyleDetail/:musicStyleSubDetail/BluesIsForEveryOne"
+        component={BluesIsForEveryOne}
+      /> */}
       <Route
         exact
         path="/"

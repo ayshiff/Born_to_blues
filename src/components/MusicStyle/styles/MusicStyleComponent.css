@@ -30,3 +30,94 @@
     margin-left:45px;
 /*    margin-right: 50px;*/
 }
+#musicWrap{
+    background: #222;
+    height: 92vh;
+}
+#musicWrap > .flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+}
+#musicWrap h1 {
+    color: #fff;
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    transform: rotate(180deg);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 208px;
+    font-family: 'DINProCondBold';
+    margin: 0;
+    position: relative;
+}
+#musicWrap .vinyle{
+    width: 350px;
+    height: 350px;
+    position: relative;
+    z-index: 5;
+}
+#musicWrap .vinyle img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 125%;
+    animation-duration: 0.4s;
+    animation-name: fadein;
+    /*z-index: -1;*/
+}
+#musicWrap p{
+    width: 35%;
+    color: #fff;
+    z-index: 10;
+    margin-left: 150px;
+    animation-duration: 3s;
+    animation-name: fadein;
+    font-size: 25px;
+    font-family: 'DINPro';
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 767px) {
+    #musicWrap > .flex{
+        display: block;
+        margin-top: 10%;
+    }
+    #musicWrap .vinyle{
+        width: 100px;
+        height: 100px;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+       
+    }
+    #musicWrap h1 {
+        -webkit-writing-mode: horizontal-tb;
+        transform: rotate(0);
+        font-size: 80px;
+    }
+    #musicWrap .vinyle img{
+        
+        top: 0;
+    }
+    #musicWrap p{
+     width: 100%;
+    color: #fff;
+    z-index: 10;
+     margin-left: 0px;
+    text-align: initial;
+    font-size: 15px;
+    
+    padding: 0 10%;
+    }
+}
+
+@keyframes fadein {
+    0% { opacity: 0;}
+    100% { opacity:1 ;}
+  }
+
+
+    
+

@@ -1,0 +1,210 @@
+#wrap{
+    background: #222;
+    height: 92vh;
+}
+#wrap > .flex{
+    display: flex;
+    justify-content: space-between;
+}
+#wrap h1 {
+    color: #fff;
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    transform: rotate(180deg) translateY(-50px);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 108px;
+}
+#wrap h1 span{
+    position: relative;
+}
+#wrap h1 span:before {
+    position: absolute;
+    background: white;
+    content: '';
+    width: 3px;
+    height: 100px;
+    bottom: -110px;
+    left: 25px;
+}
+#artistDetails{
+    background: #222;
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+    width: 100%;
+}
+#artistDetails .content{
+    position: absolute;
+    top: 15%;
+    width: 50vw;
+}
+#artistDetails span,
+#artistDetails h2{
+    color: #fff;
+}
+#artistDetails p.text{
+    color: white;
+    font-size: 13px;
+    max-height: 45vh;
+    /*overflow-y: scroll;*/
+    font-size: 20px;
+    font-family: 'DINProLight';
+
+}
+#artistDetails h2{
+    font-size: 50px;
+    font-family: 'DINProMedium';
+}
+#artistDetails .back i {
+    color: #fff;
+    font-size: 30px;
+}
+#artistDetails > div >div{
+    display: flex;
+}
+#artistDetails .playMusic{
+    width: 50%;
+}
+.playMusic{
+    display: flex;
+}
+.playMusic i {
+    /*color: #a80000;*/
+    font-size: 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.playMusic button {
+    position: relative;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    padding: 25px;
+    background: transparent;
+    /*border: 1px solid #a80000;*/
+}
+.playMusic p {
+    color: #fff!important;
+    margin: 0;
+    font-size: 18px;
+    font-family: 'DINPro';
+}
+.playMusic div {
+    position: relative;
+    margin-left: 20px;
+    padding-top: 8px;
+
+}
+.playMusic div:before {
+    position: absolute;
+    content: '';
+    width: 30px;
+    height: 2px;
+    top: 0;
+    left: 0;
+    /*background: #a80000;*/
+}
+#artistDetails .nav{
+    position: absolute;
+    top: 20%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+}
+#artistDetails .nav a {
+    width: 8vw;
+    height: 10vw;
+    position: relative;
+    display: block;
+    transform: rotate(-85deg);
+    transition: 0.5s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+}
+
+#artistDetails .nav a:hover{
+    transform: scale(1.1) rotate(-70deg);
+}
+#artistDetails .nav a img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 180%;
+}
+#artistDetails .nav a .logo{
+    width: 90%;
+}
+
+/*navSubDetails*/
+.navSubDetails{
+    margin: 0 auto;
+    display: flex;
+    /*height: 50px;*/
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    top: 140px;
+    right: -50px;
+}
+.navSubDetails a{
+    display: block;
+    width: 40px;
+    height: 20px;
+    position: relative;
+}
+.navSubDetails a:before{
+    display: block;
+    width: 15px;
+    background: #fff;
+    height: 3px;
+    position: absolute;
+    top: calc(50% - 1.5px);
+    top: calc(50% - 7.5px);
+    content: '';
+}
+.navSubDetails a.active:before{
+    /*background: #a80000;*/
+    width: 20px;
+    height: 4px;
+}
+.youtube{
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 767px) {
+    #artistDetails h2 {
+        font-size: 50px;
+    }
+}
+
+.pochette{
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 10px -10px 9px -9px rgba(0,0,0,0.75);
+}
+.pochette:before{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background: #222;
+    border-radius: 50%;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -75%);
+    content: '';
+}
+.pochette p{
+    margin: 30px 5px;
+    color: white;
+    text-transform: uppercase;
+}

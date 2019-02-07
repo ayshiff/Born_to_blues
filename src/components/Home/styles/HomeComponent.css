@@ -1,12 +1,12 @@
 #home{
     height: 100vh;
     position: relative;
-    background: #111;
+    background: #222;
 }
 #home #playerWrap{
     width: 100%;
     height: 100%;
-    background: #111;
+    background: #222;
     position: absolute;
     top: 0;
     left: 0;
@@ -69,5 +69,22 @@
     #home h1{
         font-size: 1.5rem;
         transform: translate(-50%, calc(-50% + 30vw));
+    }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 767px) {
+    #home h1{
+        top: 75%;
+    }
+    #home ul {
+        display: block;
+        left: 45%;
+        top: 50%;
+    }
+    #home ul li{
+      margin-bottom: 30%;
+    }
+    #home ul img{
+        width: 300%;
+        height: 150%;
     }
 }
