@@ -40,7 +40,13 @@ export const NavigationDetails = ({
       <li key={detail}>
         <Link
           className={className}
-          to={detail !== "blues" ? `/${musicStyle}/${detail}` : `/${detail}`}
+          to={
+            detail !== "blues"
+              ? `/${musicStyle}/${detail}`
+              : detail === "home"
+              ? `/${musicStyle}`
+              : `/${detail}`
+          }
         />
       </li>
     );

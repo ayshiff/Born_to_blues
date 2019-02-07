@@ -122,7 +122,8 @@ class MusicStyleSubDetailsComponent extends Component<Props, State> {
           navBarState: musicStyleState,
           musicStyleState: find(propEq("name", musicStyleSubDetail))(
             musicStyleState
-          )
+          ),
+          indexDescription: 0
         });
         if (musicStyleState.map(e => hasSong(e))) {
           fetch(`${process.env.REACT_APP_DB_URL}/api/song/${musicStyle}`)
