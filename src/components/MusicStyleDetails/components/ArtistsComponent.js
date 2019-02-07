@@ -10,7 +10,6 @@ type Props = {
 
 const ArtistsComponent = (props: Props) => {
   const { musicStyleState } = props;
-  console.log(musicStyleState);
   return (
     <section id="artist">
       <div>
