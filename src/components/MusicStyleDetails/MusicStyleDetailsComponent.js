@@ -7,6 +7,7 @@ import ArtistsComponent from "./components/ArtistsComponent";
 import AnecdoteComponent from "./components/AnecdoteComponent";
 import InfluenceComponent from "./components/InfluenceComponent";
 import LinksComponent from "./components/LinksComponent";
+import BluesIsForEveryOne from "./components/BluesIsForEveryOne";
 
 import pointFreeUpperCase from "../../utils/pointFreeUpperCase";
 import { NavigationDetails } from "../NavigationBar/index";
@@ -41,7 +42,10 @@ export default class MusicStyleDetailsComponent extends Component<
   };
 
   fetchData = (musicStyle: string, musicStyleDetail: any) => {
-    if (musicStyleDetail !== "impact" || musicStyleDetail !== "origine") {
+    if (
+      (musicStyleDetail !== "impact" || musicStyleDetail !== "origine") &&
+      musicStyleDetail !== "end"
+    ) {
       fetch(
         `${process.env.REACT_APP_DB_URL}/api/${musicStyleDetail}/${musicStyle}`
       )
@@ -52,22 +56,30 @@ export default class MusicStyleDetailsComponent extends Component<
     }
   };
 
-  getNextLink = (nav) => {
+  getNextLink = nav => {
     const {
       params: { musicStyle, musicStyleDetail }
     } = this.props;
     let index = nav.indexOf(musicStyleDetail);
     index++;
     let link = `/${musicStyle}/${nav[index]}`;
-    if (index === undefined){
+    if (index === undefined) {
       link = `/${musicStyle}`;
     }
-    if (musicStyle !== 'blues' && index >= nav.length - 1){
-      link = '/blues';
-      return <Link className="NextButton" to={link}>Discover the Blues</Link>;
+    if (musicStyle !== "blues" && index >= nav.length - 1) {
+      link = "/blues";
+      return (
+        <Link className="NextButton" to={link}>
+          Discover the Blues
+        </Link>
+      );
     }
-    return <Link className="NextButton" to={link}>Next</Link>;
-  }
+    return (
+      <Link className="NextButton" to={link}>
+        Next
+      </Link>
+    );
+  };
 
   componentDidMount = () => {
     const {
@@ -173,28 +185,38 @@ export default class MusicStyleDetailsComponent extends Component<
 
     return (
       <div>
-        <style>{css}</style>
-        <HeaderComponent params={params} />
-        <Context.Consumer>
-          {({ MUSIC_DETAILS, BLUES_DETAILS }) => (
-            <div id="wrap">
-              <div className="flex">
-                <h1>
-                  <span>{pointFreeUpperCase(musicStyleDetail)}</span>
-                </h1>
-                {musicStyleState && this.renderContent()}
-              </div>
-              <ul className="navDetails">
-                <NavigationDetails
-                  arrayElement={musicStyle === "blues" ? BLUES_DETAILS : MUSIC_DETAILS}
-                  musicStyle={musicStyle}
-                  currentDetail={musicStyleDetail}
-                />
-              </ul>
-              {musicStyle === "blues" ? this.getNextLink(BLUES_DETAILS) : this.getNextLink(MUSIC_DETAILS)}
-            </div>
-          )}
-        </Context.Consumer>
+        {musicStyleDetail === "end" ? (
+          <BluesIsForEveryOne />
+        ) : (
+          <div>
+            <style>{css}</style>
+            <HeaderComponent params={params} />
+            <Context.Consumer>
+              {({ MUSIC_DETAILS, BLUES_DETAILS }) => (
+                <div id="wrap">
+                  <div className="flex">
+                    <h1>
+                      <span>{pointFreeUpperCase(musicStyleDetail)}</span>
+                    </h1>
+                    {musicStyleState && this.renderContent()}
+                  </div>
+                  <ul className="navDetails">
+                    <NavigationDetails
+                      arrayElement={
+                        musicStyle === "blues" ? BLUES_DETAILS : MUSIC_DETAILS
+                      }
+                      musicStyle={musicStyle}
+                      currentDetail={musicStyleDetail}
+                    />
+                  </ul>
+                  {musicStyle === "blues"
+                    ? this.getNextLink(BLUES_DETAILS)
+                    : this.getNextLink(MUSIC_DETAILS)}
+                </div>
+              )}
+            </Context.Consumer>
+          </div>
+        )}
       </div>
     );
   }
