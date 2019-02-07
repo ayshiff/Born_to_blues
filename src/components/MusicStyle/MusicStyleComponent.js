@@ -129,7 +129,7 @@ export default class MusicStyleComponent extends Component<Props, State> {
                 style={{ border: `3px solid ${musicStyle.color}` }}
                 className="NextButton"
                 to={`/${params}/${
-                  params === "blues" ? BLUES_DETAILS[0] : MUSIC_DETAILS[0]
+                  params === "blues" ? BLUES_DETAILS[1] : MUSIC_DETAILS[1]
                 }`}
               >
                 Next
