@@ -7,10 +7,10 @@
     background-image: url('../assets/img/img-conclusion.jpg');
     background-size:cover;
     color:#f9f9f9;
-    opacity:0.98;
+    opacity:1;
 }
 .blues4allTitle{
-    font-size: 54px;
+    font-size: 108px;
     margin: 10px 0px;
     font-weight: 800;
     -webkit-animation:fadeIn 1s ; /* Safari 4+ */
@@ -20,7 +20,7 @@
 }
 .blues4allSubtitle{
     font-weight: 500;
-    font-size: 40px;
+    font-size: 80px;
     margin:10px 0px;
     -webkit-animation:fadeIn 1.5s ; /* Safari 4+ */
     -moz-animation:   fadeIn 1.5s ; /* Fx 5+ */
@@ -33,7 +33,7 @@
 }
 .subtitleBluesContainer a{
     text-decoration: none;
-    font-size :40px;
+    font-size :60px;
     color:#f9f9f9;
     font-weight: 500;
     margin-left:25px;
