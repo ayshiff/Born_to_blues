@@ -52,7 +52,6 @@ export default class MusicStyleComponent extends Component<Props, State> {
 
   render() {
     const { params } = this.props;
-
     const { musicStyle, color } = this.state;
 
     const styleColor = color;
