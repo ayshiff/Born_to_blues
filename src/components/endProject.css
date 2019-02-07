@@ -1,0 +1,49 @@
+.Blues4all{
+    width:100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/img/img-conclusion.jpg');
+    background-size:cover;
+    color:#f9f9f9;
+    opacity:0.98;
+}
+.blues4allTitle{
+    font-size: 54px;
+    margin: 10px 0px;
+    font-weight: 800;
+    -webkit-animation:fadeIn 1s ; /* Safari 4+ */
+    -moz-animation:   fadeIn 1s ; /* Fx 5+ */
+    -o-animation:     fadeIn 1s ; /* Opera 12+ */
+    animation:   fadeIn 1s ; /* Opera 12+ */
+}
+.blues4allSubtitle{
+    font-weight: 500;
+    font-size: 40px;
+    margin:10px 0px;
+    -webkit-animation:fadeIn 1.5s ; /* Safari 4+ */
+    -moz-animation:   fadeIn 1.5s ; /* Fx 5+ */
+    -o-animation:     fadeIn 1.5s ; /* Opera 12+ */
+    animation:   fadeIn 1.5s ; /* Opera 12+ */
+}
+.subtitleBluesContainer{
+    display: flex;
+    align-items: center;
+}
+.subtitleBluesContainer a{
+    text-decoration: none;
+    font-size :40px;
+    color:#f9f9f9;
+    font-weight: 500;
+    margin-left:25px;
+    -webkit-animation:fadeIn 2s ; /* Safari 4+ */
+    -moz-animation:   fadeIn 2s ; /* Fx 5+ */
+    -o-animation:     fadeIn 2s ; /* Opera 12+ */
+    animation:        fadeIn 2s ; /* IE 10+, Fx 29+ */
+}
+
+@keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+  }
