@@ -79,11 +79,13 @@
 }
 #anecdote .text h2{
     margin-top: 0;
-    font-size: 34px;
+    font-size: 55px;
     text-transform: uppercase;
+    font-family: 'DINProCondBold';
 }
 #anecdote .text p{
-    font-size: 14px;
+    font-size: 22px;
+    font-family: 'DINPro';
 }
 #anecdote .videoWrap{
     position: relative;
@@ -190,7 +192,8 @@
     transform: rotate(180deg) translateY(-50px);
     text-align: center;
     text-transform: uppercase;
-    font-size: 48px;
+    font-size: 108px;
+    font-family: 'DINProCondBold';
 }
 #wrap h1 span{
     position: relative;
@@ -300,9 +303,15 @@
 }
 .vinyleLogo .logo{
     width: 60%;
+    animation-duration: 0.9s ;
+    animation-name: rotate;
+    transition:  cubic-bezier(0.785, 0.135, 0.150, 0.860);
 }
 .vinyleLogo .vinyle{
     width: 125%;
+    animation-duration: 0.9s ;
+    animation-name: rotate;
+    transition:  cubic-bezier(0.785, 0.135, 0.150, 0.860);
 }
 /*links*/
 #links {
@@ -312,22 +321,28 @@
     align-items: center;
     width: 80%;
     height: 80vh;
+    animation-duration: 0.9s;
+    animation-name: links;
 }
 #links > div{
     width: 30%;
     margin: 0 10px;
 }
 #links h2{
-    font-size: 34px;
+    font-size: 50px;
+    font-family: 'DINProCondBold';
 }
 #links p{
-    font-size: 14px;
+    font-size: 22px;
+    font-family: 'DINPro';
 }
 #links a{
     /*color: #a80000;*/
     text-decoration: none;
     position: relative;
     padding-left: 35px;
+    font-size: 25px;
+    font-family: 'DINProMedium';
 }
 #links a:before{
     content: '';
@@ -339,6 +354,77 @@
     top: 10px;
     position: absolute;
 }
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 767px) {
+    #links {
+        display: block;
+        padding-top: 10%;
+    }
+    #links > div{
+        width: 100%;
+    }
+    #links h2{
+        font-size: 25px;
+    }
+    #links p {
+        font-size: 20px;
+    }
+    #links a {
+        font-size: 20px;
+    }
+    #wrap h1 span:before {
+        width: 3px;
+        height: 35px;
+      bottom: -50px;
+        left: 25px;
+    }
+    #wrap h1 {
+       font-size: 35px;
+       margin: 20px;
+       font-size: 70px;
+    }
+    /*ArtistComponent*/
+    #artist > div{
+        
+    }
+    #artist > div {
+        overflow: inherit;
+        display: block;
+    }
+    #artist img {
+        
+    }
+    #artist a {
+        width: 120px;
+        height: 120px;
+        margin: 0;
+    }
+
+    #artist > div> div:nth-child(1):before{
+        width: 0;
+    }
+    #artist > div> div:nth-child(2):before{
+        
+        width: 0;
+    } 
+    #artist > div> div:nth-child(2){
+        margin-left: 110px;
+    }
+    #artist > div> div:nth-child(4){
+        margin-left: 110px;
+    }                                  
+}
+
+@keyframes rotate {
+    0% {  transform: translate(-50%, -50%) rotate(0deg); left: 550%;}
+    100% {  transform: translate(-50%, -50%) rotate(360deg);left: 50%;}
+  }
+
+  @keyframes links {
+    0% { padding-top: 60%;}
+    100% { padding-top: 0%;}
+  }
+
 /* influence */
 #anecdote.influence .video {
     width: 250px;

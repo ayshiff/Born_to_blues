@@ -71,3 +71,20 @@
         transform: translate(-50%, calc(-50% + 30vw));
     }
 }
+@media only screen and (min-device-width : 320px) and (max-device-width : 767px) {
+    #home h1{
+        top: 75%;
+    }
+    #home ul {
+        display: block;
+        left: 45%;
+        top: 50%;
+    }
+    #home ul li{
+      margin-bottom: 30%;
+    }
+    #home ul img{
+        width: 300%;
+        height: 150%;
+    }
+}

@@ -5,23 +5,51 @@
   src: url('./assets/fonts/DINPro.otf');
 }
 @font-face {
-  font-family: 'DINPro';
+  font-family: 'DINProBold';
   font-style: normal;
   font-weight: 700;
   src: url('./assets/fonts/DINPro-Bold.otf');
 }
 @font-face {
-  font-family: 'DINPro';
+  font-family: 'DINProItalic';
   font-style: italic;
   font-weight: 400;
   src: url('./assets/fonts/DINPro-Italic.otf');
 }
 @font-face {
-  font-family: 'DINPro';
+  font-family: 'DINProCond';
   font-style: normal;
   font-weight: 400;
   font-stretch: condensed;
   src: url('./assets/fonts/DINPro-Cond.otf');
+}
+@font-face {
+  font-family: 'DINProLight';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: condensed;
+  src: url('./assets/fonts/DINPro-Light.otf');
+}
+@font-face {
+  font-family: 'DINProCondLight';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: condensed;
+  src: url('./assets/fonts/DINPro-CondLight.otf');
+}
+@font-face {
+  font-family: 'DINProCondBold';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: condensed;
+  src: url('./assets/fonts/DINPro-CondBold.otf');
+}
+@font-face {
+  font-family: 'DINProMedium';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: condensed;
+  src: url('./assets/fonts/DINPro-Medium.otf');
 }
 body {
   margin: 0;
@@ -37,3 +65,5 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
