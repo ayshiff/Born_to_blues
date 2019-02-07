@@ -66,7 +66,7 @@ class MusicStyleSubDetailsComponent extends Component<Props, State> {
                   alt={`${musician.name} musician logo`}
                 />
               ) : (
-                <img src={musician.img} alt={`${musician.name} logo`} />
+                <div className="pochette"><p>{musician.name}</p></div>
               )}
             </Link>
           </div>
@@ -162,6 +162,9 @@ class MusicStyleSubDetailsComponent extends Component<Props, State> {
           background: ${styleColor};
       }
       .navSubDetails a.active:before{
+          background: ${styleColor};
+      }
+      .pochette{
           background: ${styleColor};
       }
     `;

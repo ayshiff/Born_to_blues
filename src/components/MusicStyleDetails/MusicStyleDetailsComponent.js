@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./styles/MusicStyleDetailsComponent.css";
 import fetchColor from "../../utils/fetch";
 
@@ -50,6 +51,23 @@ export default class MusicStyleDetailsComponent extends Component<
         });
     }
   };
+
+  getNextLink = (nav) => {
+    const {
+      params: { musicStyle, musicStyleDetail }
+    } = this.props;
+    let index = nav.indexOf(musicStyleDetail);
+    index++;
+    let link = `/${musicStyle}/${nav[index]}`;
+    if (index === undefined){
+      link = `/${musicStyle}`;
+    }
+    if (musicStyle !== 'blues' && index >= nav.length - 1){
+      link = '/blues';
+      return <Link className="NextButton" to={link}>Discover the Blues</Link>;
+    }
+    return <Link className="NextButton" to={link}>Next</Link>;
+  }
 
   componentDidMount = () => {
     const {
@@ -130,7 +148,7 @@ export default class MusicStyleDetailsComponent extends Component<
       #header a.headerLink:after{
           background: ${styleColor};
       }
-      #anecdote .text button {
+      #anecdote .buttonVideoToggle {
           background: ${styleColor};
       }
       #anecdote .nav a{
@@ -148,6 +166,9 @@ export default class MusicStyleDetailsComponent extends Component<
       #links a:before{
           background: ${styleColor};
       }
+      .NextButton {
+      border: 3px solid ${styleColor}
+      }
     `;
 
     return (
@@ -164,20 +185,13 @@ export default class MusicStyleDetailsComponent extends Component<
                 {musicStyleState && this.renderContent()}
               </div>
               <ul className="navDetails">
-                {musicStyle === "blues" ? (
-                  <NavigationDetails
-                    arrayElement={BLUES_DETAILS}
-                    musicStyle={musicStyle}
-                    currentDetail={musicStyleDetail}
-                  />
-                ) : (
-                  <NavigationDetails
-                    arrayElement={MUSIC_DETAILS}
-                    musicStyle={musicStyle}
-                    currentDetail={musicStyleDetail}
-                  />
-                )}
+                <NavigationDetails
+                  arrayElement={musicStyle === "blues" ? BLUES_DETAILS : MUSIC_DETAILS}
+                  musicStyle={musicStyle}
+                  currentDetail={musicStyleDetail}
+                />
               </ul>
+              {musicStyle === "blues" ? this.getNextLink(BLUES_DETAILS) : this.getNextLink(MUSIC_DETAILS)}
             </div>
           )}
         </Context.Consumer>

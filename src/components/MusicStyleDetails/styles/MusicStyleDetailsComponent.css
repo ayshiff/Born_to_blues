@@ -85,17 +85,22 @@
 #anecdote .text p{
     font-size: 14px;
 }
-#anecdote .text button {
+#anecdote .videoWrap{
+    position: relative;
+}
+#anecdote .buttonVideoToggle {
     padding: 28px;
     width: 20px;
     height: 20px;
     /*background: #a80000;*/
     border-radius: 50%;
     border: none;
-    position: relative;
-    float: right;
+    position: absolute;
+    bottom: 35px;
+    left: 30px;
+    z-index: 10;
 }
-#anecdote .text i {
+#anecdote .buttonVideoToggle i {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -352,4 +357,13 @@
 }
 #anecdote.influence .text {
     width: 50%;
+}
+.NextButton {
+    position: absolute;
+    right: 150px;
+    bottom: 50px;
+    text-decoration: none;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 10px;
 }

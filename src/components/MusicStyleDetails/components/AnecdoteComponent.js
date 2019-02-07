@@ -84,33 +84,35 @@ export default class AnecdoteComponent extends Component<Props> {
           <div>
             <h2>{anecdoteState && anecdoteState.name}</h2>
             <p>{anecdoteState && anecdoteState.description}</p>
-            {anecdoteState &&
-              anecdoteState.songs &&
-              JSON.parse(anecdoteState.songs).content && (
-                <button type="button" onClick={() => this.videoToggle()}>
-                  <i className={`fas fa-${buttonVideo}`} />
-                </button>
-              )}
           </div>
         </div>
-        <div className="video">
-          <div>
-            <Player
-              playsInline
-              poster={
-                anecdoteState &&
-                anecdoteState.songs &&
-                JSON.parse(anecdoteState.songs).image
-              }
-              src={
-                anecdoteState &&
-                anecdoteState.songs &&
-                JSON.parse(anecdoteState.songs).content
-              }
-              // eslint-disable-next-line
-              ref={elm => (this.player = elm)}
-            />
+        <div className="videoWrap">
+          <div className="video">
+            <div>
+              <Player
+                playsInline
+                poster={
+                  anecdoteState &&
+                  anecdoteState.songs &&
+                  JSON.parse(anecdoteState.songs).image
+                }
+                src={
+                  anecdoteState &&
+                  anecdoteState.songs &&
+                  JSON.parse(anecdoteState.songs).content
+                }
+                // eslint-disable-next-line
+                ref={elm => (this.player = elm)}
+              />
+            </div>
           </div>
+          {anecdoteState &&
+          anecdoteState.songs &&
+          JSON.parse(anecdoteState.songs).content && (
+            <button className="buttonVideoToggle" type="button" onClick={() => this.videoToggle()}>
+              <i className={`fas fa-${buttonVideo}`} />
+            </button>
+          )}
         </div>
         <div className="nav">
           <h3>More anecdotes</h3>

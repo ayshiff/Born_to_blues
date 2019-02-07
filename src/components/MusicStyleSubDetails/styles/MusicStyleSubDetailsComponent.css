@@ -110,15 +110,15 @@
 }
 #artistDetails .nav a {
     width: 8vw;
-    height: 8vw;
+    height: 10vw;
     position: relative;
     display: block;
-    transform: rotate(-90deg);
+    transform: rotate(-85deg);
     transition: 0.5s cubic-bezier(0.785, 0.135, 0.150, 0.860);
 }
 
 #artistDetails .nav a:hover{
-    transform: scale(1.1) rotate(-90deg);
+    transform: scale(1.1) rotate(-70deg);
 }
 #artistDetails .nav a img {
     position: absolute;
@@ -170,4 +170,29 @@
     width: 0;
     height: 0;
     overflow: hidden;
+}
+.pochette{
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 10px -10px 9px -9px rgba(0,0,0,0.75);
+}
+.pochette:before{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background: #111;
+    border-radius: 50%;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -75%);
+    content: '';
+}
+.pochette p{
+    margin: 30px 5px;
+    color: white;
+    text-transform: uppercase;
 }
