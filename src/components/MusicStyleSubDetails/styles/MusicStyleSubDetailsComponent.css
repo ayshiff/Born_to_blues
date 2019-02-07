@@ -37,7 +37,6 @@
 #artistDetails .content{
     position: absolute;
     top: 15%;
-    right: 30vw;
     width: 50vw;
 }
 #artistDetails span,
