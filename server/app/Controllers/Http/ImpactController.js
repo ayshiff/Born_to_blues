@@ -9,7 +9,6 @@ class ImpactController {
   // Lister les lstyles
   async index({ request, response }) {
     const impacts = await Database.table("impacts").orderBy("id", "desc");
-    console.log(impacts);
     if (Object.keys(impacts).length === 0) {
       Logger.error("%s - %s", request.method(), request.url());
       return response.json({ message: Messages.post.okNothing });

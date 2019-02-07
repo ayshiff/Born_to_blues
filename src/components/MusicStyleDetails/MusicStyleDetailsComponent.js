@@ -117,7 +117,7 @@ export default class MusicStyleDetailsComponent extends Component<
       params
     } = this.props;
     const { musicStyleState, color, fetched } = this.state;
-    // console.log(musicStyleState, musicStyle);
+
     const styleColor = color;
 
     const css = `
