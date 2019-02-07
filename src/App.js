@@ -15,8 +15,8 @@ import BluesIsForEveryOne from "./components/BluesIsForEveryOne";
 export const Context = React.createContext();
 
 const contextValue = {
-  MUSIC_DETAILS: ["artists", "links", "anecdotes", "blues"],
-  BLUES_DETAILS: ["artists", "influence", "origin"]
+  MUSIC_DETAILS: ["", "artists", "links", "anecdotes", "blues"],
+  BLUES_DETAILS: ["", "artists", "influence", "origin"]
 };
 
 /**
